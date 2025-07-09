@@ -6,7 +6,7 @@ export async function onRequest(context) {
 
   if (isBrowser) {
     // If user opens in a browser → go to facebook
-    return Response.redirect("https://m.me/elitekamrul", 302);
+    return Response.redirect("https://facebook.com/elitekamrul", 302);
   }
 
   // CLI (PowerShell, curl, etc.) → fallback loader
