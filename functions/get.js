@@ -1,15 +1,4 @@
 export async function onRequest(context) {
-  const ua = context.request.headers.get("user-agent") || "";
-  const accept = context.request.headers.get("accept") || "";
-
-  const isBrowser = accept.includes("text/html") || ua.includes("Mozilla");
-
-  if (isBrowser) {
-    // If user opens in a browser → go to facebook
-    return Response.redirect("https://facebook.com/elitekamrul", 302);
-  }
-
-  // CLI (PowerShell, curl, etc.) → fallback loader
   const tryUrl = async (url) => {
     try {
       const res = await fetch(url, { method: "HEAD" });
